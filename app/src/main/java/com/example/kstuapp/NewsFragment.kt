@@ -52,7 +52,7 @@ class NewsFragment : Fragment() {
             // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
-            adapter = ListAdapter(mNicolasCageMovies)
+            adapter = NewsAdapter(mNicolasCageMovies)
         }
     }
 
