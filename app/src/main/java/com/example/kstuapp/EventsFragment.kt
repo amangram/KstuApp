@@ -23,10 +23,10 @@ data class Events(val dayDate: Int,val monthDate :String  , val title: String)
 
 class EventsFragment : Fragment() {
     private val kstuEvents = listOf(
-        Events(31, "September","Education Day"),
-        Events(14,"February","St.Valentine Day"),
-        Events(31,"December","New  Year"),
-        Events(8,"March","International Women Day")
+        Events(31, "Sep","Education Day"),
+        Events(14,"Feb","St.Valentine Day"),
+        Events(31,"Dec","New  Year"),
+        Events(8,"Mar","International Women Day")
     )
 
     override fun onCreateView(

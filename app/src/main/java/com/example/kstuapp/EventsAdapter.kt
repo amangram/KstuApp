@@ -35,7 +35,7 @@ class EventsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 
     fun bind(event: Events) {
         _dayDateView?.text = event.dayDate.toString()
-        _monthDateView?.text=event.monthDate
+        _monthDateView?.text=event.monthDate.toUpperCase()
         _titleView?.text = event.title
 
     }
