@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.support.v7.widget.RecyclerView
 
-class NewsAdapter(private val list: List<Movie>)
+class NewsAdapter(private val list: List<News>)
     : RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -14,8 +14,8 @@ class NewsAdapter(private val list: List<Movie>)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie: Movie = list[position]
-        holder.bind(movie)
+        val news: News = list[position]
+        holder.bind(news)
     }
 
     override fun getItemCount(): Int = list.size
@@ -23,19 +23,19 @@ class NewsAdapter(private val list: List<Movie>)
 }
 
 class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item, parent, false)) {
-    private var mTitleView: TextView? = null
-    private var mYearView: TextView? = null
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.news_item, parent, false)) {
+    private var _titleView: TextView? = null
+    private var _dateView: TextView? = null
 
 
     init {
-        mTitleView = itemView.findViewById(R.id.list_title)
-        mYearView = itemView.findViewById(R.id.list_description)
+        _titleView = itemView.findViewById(R.id.news_title)
+        _dateView = itemView.findViewById(R.id.news_date)
     }
 
-    fun bind(movie: Movie) {
-        mTitleView?.text = movie.title
-        mYearView?.text = movie.year.toString()
+    fun bind(news: News) {
+        _titleView?.text = news.title
+        _dateView?.text = news.date.toString()
     }
 
 }

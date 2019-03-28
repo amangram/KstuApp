@@ -20,20 +20,20 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 
-data class Movie(val title: String, val year: Int)
+data class News(val title: String, val date: Double)
 
 class NewsFragment : Fragment() {
 
 
     private val mNicolasCageMovies = listOf(
-        Movie("Raising Arizona", 1987),
-        Movie("Vampire's Kiss", 1988),
-        Movie("Con Air", 1997),
-        Movie("Gone in 60 Seconds", 1997),
-        Movie("National Treasure", 2004),
-        Movie("The Wicker Man", 2006),
-        Movie("Ghost Rider", 2007),
-        Movie("Knowing", 2009)
+        News("Putin is arrived", 28.03),
+        News("Atambaev prefer cognac and Jeenbekov drinks ovdka", 15.03),
+        News("Hybrid between ape and cow was born", 19.02),
+        News("Lakers lost their chance to play in Playoff", 15.02),
+        News("Adilbek gave Bentley to his girlfriend as a present", 14.02),
+        News("Mermaid do a full split", 10.02),
+        News("UFO was seen in 8th microdistrict", 30.01),
+        News("First news", 29.01)
     )
 
     override fun onCreateView(
