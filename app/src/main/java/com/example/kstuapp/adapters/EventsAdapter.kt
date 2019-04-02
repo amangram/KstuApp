@@ -1,9 +1,12 @@
-package com.example.kstuapp
+package com.example.kstuapp.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.kstuapp.MainMVP.Model.Events
+import com.example.kstuapp.R
+
 
 class EventsAdapter(private val list: List<Events>) : RecyclerView.Adapter<EventsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventsViewHolder {
@@ -15,9 +18,7 @@ class EventsAdapter(private val list: List<Events>) : RecyclerView.Adapter<Event
         val event: Events = list[position]
         holder.bind(event)
     }
-
     override fun getItemCount(): Int = list.size
-
 }
 
 class EventsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
@@ -25,14 +26,11 @@ class EventsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     private var _dayDateView: TextView? = null
     private var _monthDateView: TextView? = null
     private var _titleView: TextView? = null
-
-
     init {
         _dayDateView = itemView.findViewById(R.id.events_day)
         _monthDateView=itemView.findViewById(R.id.events_month)
         _titleView = itemView.findViewById(R.id.events_title)
     }
-
     fun bind(event: Events) {
         _dayDateView?.text = event.dayDate.toString()
         _monthDateView?.text=event.monthDate.toUpperCase()

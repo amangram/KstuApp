@@ -1,12 +1,16 @@
-package com.example.kstuapp
+package com.example.kstuapp.fragments.News
 
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.kstuapp.MainMVP.Presenter.Presenter
+import com.example.kstuapp.adapters.NewsAdapter
+import com.example.kstuapp.R
 import kotlinx.android.synthetic.main.fragment_news.*
 
 
@@ -14,33 +18,18 @@ import kotlinx.android.synthetic.main.fragment_news.*
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
-
-data class News(val title: String, val date: Double)
-
 class NewsFragment : Fragment() {
 
 
-    private val mNicolasCageMovies = listOf(
-        News("Putin is arrived", 28.03),
-        News("Atambaev prefer cognac and Jeenbekov drinks ovdka", 15.03),
-        News("Hybrid between ape and cow was born", 19.02),
-        News("Lakers lost their chance to play in Playoff", 15.02),
-        News("Adilbek gave Bentley to his girlfriend as a present", 14.02),
-        News("Mermaid do a full split", 10.02),
-        News("UFO was seen in 8th microdistrict", 30.01),
-        News("First news", 29.01)
-    )
-
+   lateinit var mPresenter:Presenter
+    override fun onAttach(context: Context?) {
+        mPresenter= Presenter(context!!)
+        super.onAttach(context)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
@@ -51,14 +40,13 @@ class NewsFragment : Fragment() {
             // set a LinearLayoutManager to handle Android
             // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
-            // set the custom adapter to the RecyclerView
-            adapter = NewsAdapter(mNicolasCageMovies)
+            adapter = NewsAdapter(mPresenter.NewsModel.getData())
         }
     }
 
     companion object {
-        fun newInstance(): NewsFragment = NewsFragment()
-
+        fun newInstance(): NewsFragment =
+            NewsFragment()
     }
 
 

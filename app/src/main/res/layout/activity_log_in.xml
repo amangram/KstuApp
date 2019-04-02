@@ -28,21 +28,26 @@
                       android:layout_gravity="center_horizontal"
                       android:layout_marginTop="30dp"/>
 
-            <EditText android:background="@drawable/edit_text_style"
+            <EditText
+                      android:id="@+id/studentNumber_et"
+                      android:background="@drawable/edit_text_style"
                       android:inputType="number"
                       android:hint="@string/student_number"
                       android:layout_width="300dp"
                       android:layout_height="wrap_content"
                       android:layout_gravity="center_horizontal"
                       android:layout_marginTop="40dp"/>
-            <EditText android:background="@drawable/edit_text_style"
+            <EditText
+                    android:id="@+id/studentPassword_et"
+                      android:background="@drawable/edit_text_style"
                       android:hint="@string/prompt_password"
                       android:inputType="textPassword"
                       android:layout_width="300dp"
                       android:layout_height="wrap_content"
                       android:layout_gravity="center_horizontal"
                       android:layout_marginTop="40dp"/>
-            <Button android:background="@drawable/button_style"
+            <Button
+                    android:background="@drawable/button_style"
                     android:text="@string/action_sign_in_short"
                     android:id="@+id/btn_SignIn"
                     android:textColor="@color/grayLight"

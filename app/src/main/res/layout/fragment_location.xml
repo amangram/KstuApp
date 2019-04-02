@@ -3,14 +3,16 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".fragments.News.EventsFragment">
+             tools:context=".fragments.LocationFragment">
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/events_recycler_view"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+            android:paddingTop="110dp"
+            android:paddingLeft="50dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            xmlns:android="http://schemas.android.com/apk/res/android">
-
-    </android.support.v7.widget.RecyclerView>
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:text="Location Fragment"/>
 
 </FrameLayout>
